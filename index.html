@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light" data-font-size="normal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Petualangan NKRI: media pembelajaran Pendidikan Pancasila untuk siswa SMP kelas VIII.">
+  <title>Petualangan NKRI</title>
+  <script src="theme.js?v=5"></script>
+  <link rel="stylesheet" href="theme.css?v=5">
+  <link rel="stylesheet" href="layout.css?v=5">
+  <link rel="stylesheet" href="components.css?v=5">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
+
+  <header class="app-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand-wrapper">
+          <span class="brand-flag" aria-hidden="true">🇮🇩</span>
+          <div class="brand-text">
+            <h1>Petualangan NKRI</h1>
+            <p class="brand-tagline">Pendidikan Pancasila kelas VIII</p>
+          </div>
+        </div>
+
+        <div class="accessibility-bar">
+          <div class="font-size-controls" role="group" aria-label="Ukuran huruf">
+            <button type="button" class="font-btn" data-size="small" aria-label="Huruf kecil" aria-pressed="false">A−</button>
+            <button type="button" class="font-btn" data-size="normal" aria-label="Huruf normal" aria-pressed="true">A</button>
+            <button type="button" class="font-btn" data-size="large" aria-label="Huruf besar" aria-pressed="false">A+</button>
+          </div>
+
+          <div class="theme-dropdown-container">
+            <button type="button" id="theme-toggle-btn" class="theme-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-controls="theme-menu">
+              <span id="theme-active-icon" aria-hidden="true">☀️</span>
+              <span id="theme-active-label">Terang</span>
+              <span aria-hidden="true">▾</span>
+            </button>
+            <div id="theme-menu" class="theme-menu" role="menu" aria-label="Pilih tema">
+              <button type="button" class="theme-option-btn" role="menuitemradio" data-theme-value="light" aria-checked="true">
+                <span class="theme-option-left"><span aria-hidden="true">☀️</span><span>Terang</span></span>
+                <span class="theme-check-indicator" aria-hidden="true">✓</span>
+              </button>
+              <button type="button" class="theme-option-btn" role="menuitemradio" data-theme-value="dark" aria-checked="false">
+                <span class="theme-option-left"><span aria-hidden="true">🌙</span><span>Gelap</span></span>
+                <span class="theme-check-indicator" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="theme-option-btn" role="menuitemradio" data-theme-value="high-contrast" aria-checked="false">
+                <span class="theme-option-left"><span aria-hidden="true">🔲</span><span>Kontras Tinggi</span></span>
+                <span class="theme-check-indicator" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="theme-option-btn" role="menuitemradio" data-theme-value="eye-care" aria-checked="false">
+                <span class="theme-option-left"><span aria-hidden="true">☕</span><span>Nyaman Mata</span></span>
+                <span class="theme-check-indicator" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container app-container">
+      <div id="app" class="card"></div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <p class="secondary-text">Petualangan NKRI. Data nama dan skor tidak dikirim ke mana pun.</p>
+    </div>
+  </footer>
+
+  <script src="app.js?v=5"></script>
+</body>
+</html>

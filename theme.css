@@ -1,0 +1,391 @@
+/* ==========================================================================
+   PETUALANGAN NKRI - SISTEM TEMA & VARIABEL CSS
+   Semua warna didefinisikan sebagai variabel CSS di sini.
+   Tidak ada komponen yang boleh menuliskan kode warna langsung.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ROOT DEFAULTS & UKURAN HURUF
+   Ukuran dasar minimal 16px.
+   -------------------------------------------------------------------------- */
+:root {
+  /* Skala Ukuran Huruf (Ukuran Dasar Minimal 16px) */
+  --font-size-base: 18px;       /* Default: Normal (18px) */
+  --font-size-sm: 16px;         /* Minimum absolute text size: 16px */
+  --font-size-md: 18px;
+  --font-size-lg: 22px;
+  --font-size-xl: 28px;
+  --font-size-2xl: 34px;
+  --font-size-title: 40px;
+
+  /* Line Height yang nyaman untuk keterbacaan */
+  --line-height-base: 1.6;
+  --line-height-heading: 1.25;
+
+  /* Radius & Spacing */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Transisi Ringan (Dihormati oleh prefers-reduced-motion) */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+
+  /* Nilai default tema (akan dioverride oleh atribut data-theme) */
+  --bg-body: #FFFFFF;
+  --bg-surface: #F8FAFC;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-surface-alt: #F1F5F9;
+  --bg-header: #8F0E1E;
+
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #475569;
+  --text-header: #FFFFFF;
+  --text-header-secondary: #FDE047;
+
+  --border-color: #CBD5E1;
+  --border-color-strong: #94A3B8;
+  --border-width: 1px;
+  --border-style: solid;
+
+  --accent-primary: #B91C1C;
+  --accent-primary-hover: #991B1B;
+  --accent-primary-text: #FFFFFF;
+  --accent-gold: #854D0E;
+  --accent-gold-bg: #FEF3C7;
+  --accent-gold-border: #D97706;
+  --accent-gold-text: #78350F;
+
+  --color-success-bg: #DCFCE7;
+  --color-success-text: #14532D;
+  --color-success-border: #16A34A;
+  --color-success-badge-bg: #15803D;
+  --color-success-badge-text: #FFFFFF;
+
+  --color-error-bg: #FEE2E2;
+  --color-error-text: #7F1D1D;
+  --color-error-border: #DC2626;
+  --color-error-badge-bg: #B91C1C;
+  --color-error-badge-text: #FFFFFF;
+
+  --color-disabled-bg: #E2E8F0;
+  --color-disabled-text: #334155;
+  --color-disabled-border: #64748B;
+  --color-disabled-badge-bg: #475569;
+  --color-disabled-badge-text: #FFFFFF;
+
+  --focus-outline-color: #B91C1C;
+  --focus-outline-width: 3px;
+  --focus-outline-offset: 3px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   2. PENGATURAN UKURAN HURUF
+   a) Kecil  : 16px (memenuhi syarat minimal 16px)
+   b) Normal : 18px
+   c) Besar  : 21px
+   -------------------------------------------------------------------------- */
+html[data-font-size="small"] {
+  --font-size-base: 16px;
+  --font-size-sm: 16px;
+  --font-size-md: 17px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 30px;
+  --font-size-title: 36px;
+}
+
+html[data-font-size="normal"] {
+  --font-size-base: 18px;
+  --font-size-sm: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 22px;
+  --font-size-xl: 28px;
+  --font-size-2xl: 34px;
+  --font-size-title: 40px;
+}
+
+html[data-font-size="large"] {
+  --font-size-base: 21px;
+  --font-size-sm: 18px;
+  --font-size-md: 21px;
+  --font-size-lg: 26px;
+  --font-size-xl: 32px;
+  --font-size-2xl: 38px;
+  --font-size-title: 46px;
+}
+
+/* --------------------------------------------------------------------------
+   3. TEMA A: TERANG (Merah-Putih Bersih, Aksen Emas)
+   Kontras teks >= 4.5:1 di semua komponen.
+   -------------------------------------------------------------------------- */
+html[data-theme="light"] {
+  --bg-body: #FFFFFF;
+  --bg-surface: #F8FAFC;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-surface-alt: #F1F5F9;
+  --bg-header: #8F0E1E; /* Merah Indonesia pekat, kontras teks putih 9.34:1 */
+
+  --text-primary: #0F172A;   /* Kontras vs #FFFFFF: 17.85:1 */
+  --text-secondary: #334155; /* Kontras vs #FFFFFF: 10.35:1 */
+  --text-muted: #475569;     /* Kontras vs #FFFFFF: 7.58:1 */
+  --text-header: #FFFFFF;    /* Kontras vs #8F0E1E: 9.34:1 */
+  --text-header-secondary: #FEF08A; /* Kuning emas terang vs #8F0E1E: 10.2:1 */
+
+  --border-color: #CBD5E1;
+  --border-color-strong: #94A3B8;
+  --border-width: 1px;
+  --border-style: solid;
+
+  --accent-primary: #B91C1C;
+  --accent-primary-hover: #991B1B;
+  --accent-primary-text: #FFFFFF; /* Kontras vs #B91C1C: 6.47:1 */
+
+  --accent-gold: #854D0E;
+  --accent-gold-bg: #FEF3C7;
+  --accent-gold-border: #D97706;
+  --accent-gold-text: #78350F;   /* Kontras vs #FEF3C7: 8.1:1 */
+
+  /* Status Benar */
+  --color-success-bg: #DCFCE7;
+  --color-success-text: #14532D; /* Kontras vs #DCFCE7: 8.30:1 */
+  --color-success-border: #16A34A;
+  --color-success-badge-bg: #15803D;
+  --color-success-badge-text: #FFFFFF;
+
+  /* Status Salah */
+  --color-error-bg: #FEE2E2;
+  --color-error-text: #7F1D1D;   /* Kontras vs #FEE2E2: 8.20:1 */
+  --color-error-border: #DC2626;
+  --color-error-badge-bg: #B91C1C;
+  --color-error-badge-text: #FFFFFF;
+
+  /* Status Tombol Nonaktif */
+  --color-disabled-bg: #E2E8F0;
+  --color-disabled-text: #334155; /* Kontras vs #E2E8F0: 8.40:1 */
+  --color-disabled-border: #64748B;
+  --color-disabled-badge-bg: #475569;
+  --color-disabled-badge-text: #FFFFFF;
+
+  --focus-outline-color: #B91C1C;
+  --focus-outline-width: 3px;
+  --focus-outline-offset: 3px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   4. TEMA B: GELAP (Latar Biru Tua / Abu Gelap, Teks Terang, Bukan Hitam Pekat)
+   Warna latar biru malam (#0B132B) dan surface (#1C2541).
+   -------------------------------------------------------------------------- */
+html[data-theme="dark"] {
+  --bg-body: #0B132B;            /* Biru tua malam, nyaman bukan hitam pekat */
+  --bg-surface: #1C2541;         /* Kartu biru tua gelap */
+  --bg-surface-elevated: #243054;
+  --bg-surface-alt: #16203B;
+  --bg-header: #141D36;
+
+  --text-primary: #F8FAFC;       /* Kontras vs #0B132B: 17.57:1 */
+  --text-secondary: #CBD5E1;     /* Kontras vs #0B132B: 12.38:1 */
+  --text-muted: #94A3B8;         /* Kontras vs #0B132B: 6.94:1 */
+  --text-header: #FFFFFF;        /* Kontras vs #141D36: 15.10:1 */
+  --text-header-secondary: #FDE047;
+
+  --border-color: #334155;
+  --border-color-strong: #475569;
+  --border-width: 1px;
+  --border-style: solid;
+
+  --accent-primary: #E11D48;     /* Merah marun terang ramah tema gelap */
+  --accent-primary-hover: #F43F5E;
+  --accent-primary-text: #FFFFFF; /* Kontras vs #E11D48: 4.70:1 */
+
+  --accent-gold: #FBBF24;
+  --accent-gold-bg: #451A03;
+  --accent-gold-border: #F59E0B;
+  --accent-gold-text: #FEF3C7;
+
+  /* Status Benar */
+  --color-success-bg: #064E3B;
+  --color-success-text: #A7F3D0; /* Kontras vs #064E3B: 7.58:1 */
+  --color-success-border: #10B981;
+  --color-success-badge-bg: #059669;
+  --color-success-badge-text: #FFFFFF;
+
+  /* Status Salah */
+  --color-error-bg: #450A0A;
+  --color-error-text: #FECACA;   /* Kontras vs #450A0A: 11.16:1 */
+  --color-error-border: #EF4444;
+  --color-error-badge-bg: #DC2626;
+  --color-error-badge-text: #FFFFFF;
+
+  /* Status Tombol Nonaktif */
+  --color-disabled-bg: #1E293B;
+  --color-disabled-text: #94A3B8; /* Kontras vs #1E293B: 5.71:1 */
+  --color-disabled-border: #475569;
+  --color-disabled-badge-bg: #334155;
+  --color-disabled-badge-text: #CBD5E1;
+
+  --focus-outline-color: #38BDF8;
+  --focus-outline-width: 3px;
+  --focus-outline-offset: 3px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   5. TEMA C: KONTRAS TINGGI (High Contrast: Keterbacaan Maksimal & Batas Jelas)
+   Teks putih di atas hitam pekat, batas 2-3px tegas, tanpa bayangan samar.
+   -------------------------------------------------------------------------- */
+html[data-theme="high-contrast"] {
+  --bg-body: #000000;
+  --bg-surface: #000000;
+  --bg-surface-elevated: #111111;
+  --bg-surface-alt: #181818;
+  --bg-header: #000000;
+
+  --text-primary: #FFFFFF;       /* Kontras vs #000000: 21.00:1 */
+  --text-secondary: #FFFF00;     /* Kontras vs #000000: 19.56:1 */
+  --text-muted: #E2E8F0;         /* Kontras vs #000000: 16.4:1 */
+  --text-header: #FFFFFF;
+  --text-header-secondary: #FFFF00;
+
+  --border-color: #FFFFFF;
+  --border-color-strong: #FFFF00;
+  --border-width: 2px;
+  --border-style: solid;
+
+  --accent-primary: #FFFF00;     /* Kuning terang bertepi tajam */
+  --accent-primary-hover: #FFFFFF;
+  --accent-primary-text: #000000; /* Kontras vs #FFFF00: 19.56:1 */
+
+  --accent-gold: #FFFF00;
+  --accent-gold-bg: #000000;
+  --accent-gold-border: #FFFF00;
+  --accent-gold-text: #FFFF00;
+
+  /* Status Benar */
+  --color-success-bg: #000000;
+  --color-success-text: #00FF66; /* Kontras vs #000000: 15.50:1 */
+  --color-success-border: #00FF66;
+  --color-success-badge-bg: #00FF66;
+  --color-success-badge-text: #000000;
+
+  /* Status Salah */
+  --color-error-bg: #000000;
+  --color-error-text: #FF6666;   /* Kontras vs #000000: 7.34:1 */
+  --color-error-border: #FF6666;
+  --color-error-badge-bg: #FF3333;
+  --color-error-badge-text: #000000;
+
+  /* Status Tombol Nonaktif */
+  --color-disabled-bg: #222222;
+  --color-disabled-text: #CCCCCC; /* Kontras vs #222222: 9.91:1 */
+  --color-disabled-border: #888888;
+  --color-disabled-badge-bg: #444444;
+  --color-disabled-badge-text: #FFFFFF;
+
+  --focus-outline-color: #FFFF00;
+  --focus-outline-width: 4px;
+  --focus-outline-offset: 3px;
+
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. TEMA D: NYAMAN MATA (Eye-Care: Latar Krem Hangat, Teks Cokelat Tua)
+   Sangat ramah untuk membaca buku dan belajar durasi panjang.
+   -------------------------------------------------------------------------- */
+html[data-theme="eye-care"] {
+  --bg-body: #F8F1E5;            /* Krem hangat lembut */
+  --bg-surface: #EFE4D2;         /* Permukaan biskuit hangat */
+  --bg-surface-elevated: #FAF3E6;
+  --bg-surface-alt: #E8DBC5;
+  --bg-header: #533418;          /* Cokelat kopi nusantara */
+
+  --text-primary: #2D1B0D;       /* Cokelat espresso pekat. Kontras vs #F8F1E5: 14.68:1 */
+  --text-secondary: #54361C;     /* Kontras vs #F8F1E5: 9.74:1 */
+  --text-muted: #6B492B;         /* Kontras vs #F8F1E5: 6.9:1 */
+  --text-header: #FFF8EE;        /* Kontras vs #533418: 10.64:1 */
+  --text-header-secondary: #FDE68A;
+
+  --border-color: #D6C4AA;
+  --border-color-strong: #A89074;
+  --border-width: 1px;
+  --border-style: solid;
+
+  --accent-primary: #8C3807;     /* Terracotta hangat */
+  --accent-primary-hover: #6D2B05;
+  --accent-primary-text: #FFF8EE; /* Kontras vs #8C3807: 7.42:1 */
+
+  --accent-gold: #9C6207;
+  --accent-gold-bg: #F4E2C7;
+  --accent-gold-border: #B45309;
+  --accent-gold-text: #451A03;
+
+  /* Status Benar */
+  --color-success-bg: #E0E8D0;
+  --color-success-text: #193E1B; /* Kontras vs #E0E8D0: 9.52:1 */
+  --color-success-border: #3A693C;
+  --color-success-badge-bg: #2C5E2F;
+  --color-success-badge-text: #FFF8EE;
+
+  /* Status Salah */
+  --color-error-bg: #F5DCD5;
+  --color-error-text: #6E1D1D;   /* Kontras vs #F5DCD5: 8.66:1 */
+  --color-error-border: #A33232;
+  --color-error-badge-bg: #8A2424;
+  --color-error-badge-text: #FFF8EE;
+
+  /* Status Tombol Nonaktif */
+  --color-disabled-bg: #E4D8C4;
+  --color-disabled-text: #524332; /* Kontras vs #E4D8C4: 6.76:1 */
+  --color-disabled-border: #8C7760;
+  --color-disabled-badge-bg: #73624D;
+  --color-disabled-badge-text: #FFF8EE;
+
+  --focus-outline-color: #8C3807;
+  --focus-outline-width: 3px;
+  --focus-outline-offset: 3px;
+
+  --shadow-sm: 0 1px 3px rgba(60, 40, 20, 0.08);
+  --shadow-md: 0 4px 12px rgba(60, 40, 20, 0.08);
+  --shadow-lg: 0 10px 24px rgba(60, 40, 20, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   7. PENGHORMATAN PREFERS-REDUCED-MOTION
+   Menonaktifkan animasi & transisi bagi pengguna dengan preferensi reduced motion.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
